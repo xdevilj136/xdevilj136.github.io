@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xdevilj136.github.io/</id>
     <title>Gridea</title>
-    <updated>2020-05-30T03:06:12.292Z</updated>
+    <updated>2020-05-30T03:20:06.181Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xdevilj136.github.io/"/>
     <link rel="self" href="https://xdevilj136.github.io/atom.xml"/>
@@ -11,35 +11,170 @@
     <icon>https://xdevilj136.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://xdevilj136.github.io/post/hello-gridea/</id>
-        <link href="https://xdevilj136.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[css实现闪光动效]]></title>
+        <id>https://xdevilj136.github.io/post/css-flash-animation/</id>
+        <link href="https://xdevilj136.github.io/post/css-flash-animation/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-02-09T04:39:17.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="demo展示">😎demo展示</h2>
+<p><img src="https://xdevilj136.github.io//post-images/1581236249859.gif" alt="" width="500" loading="lazy"><br>
+以上就是纯css实现的闪光效果，核心就是使用css的animation动画实现，无需编写任何js代码，实现简单且能保证性能、效果流畅。</p>
+<h2 id="代码展示">🤠代码展示</h2>
+<p>直接上代码：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;/head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+   .logo_flash {
+       position: relative;
+       margin: 0 auto;
+   }
+
+   .logo_flash {
+       width: 255px;
+       overflow: hidden;
+   }
+
+   .logo_flash:before {
+       background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+       transform: translate(-128%, 0) skewx(-25deg);
+       width: 150px;
+       height: 100%;
+       position: absolute;
+       left: 0px;
+       top: 0;
+       content: &quot;&quot;;
+       animation: flashLights 4s ease-in infinite;
+   }
+
+   @keyframes flashLights {
+       0%, 75% {
+           transform: translate(-128%, 0) skewx(-25deg);
+       }
+
+       100% {
+           transform: translate(200%, 0) skewx(-25deg);
+       }
+   }
+&lt;/style&gt;
+
+&lt;body&gt;
+   &lt;div class=&quot;logo_flash&quot;&gt;
+       &lt;img src=&quot;./img/cat.jpg&quot; width=&quot;255&quot; alt=&quot;&quot;&gt;
+   &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="代码解析">🤓代码解析</h2>
+<p>html部分就是一个div包含一个img元素，闪光动效实际就是<strong>利用css构造一个伪元素在图片上划过</strong>。<br>
+接下来按思路分析<strong>css的实现步骤</strong>：</p>
+<ol>
+<li><strong>实现闪光的伪元素</strong></li>
+</ol>
+<pre><code class="language-css">.logo_flash:before {
+    width: 10px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: &quot;&quot;;
+    }
+</code></pre>
+<p><img src="https://xdevilj136.github.io//post-images/1581230270243.png" alt="" width="255" loading="lazy"><br>
+这样就实现了悬浮图片上的伪元素，但一个矩形的白色色块显然不能表现闪光。这里增加伪元素宽度、利用css线性渐变函数linear-gradient 做下修饰：</p>
+<pre><code class="language-css">background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+width: 100px;
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://xdevilj136.github.io//post-images/1581234031553.png" alt="" width="255" loading="lazy"></figure>
+<p>然后利用tranform属性的skew函数倾斜转换，就完成了闪光伪元素的实现：</p>
+<pre><code class="language-css">transform: skewx(-25deg);
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://xdevilj136.github.io//post-images/1581234059137.png" alt="" width="255" loading="lazy"></figure>
+<ol>
+<li><strong>实现动画</strong></li>
+</ol>
+<p>已经完成了闪光伪元素的实现，接下来就是要让元素动起来。css动画应用animation属性很容易实现，首先要先定义动画帧:</p>
+<pre><code class="language-css">    @keyframes flashLights {
+        0%{
+            transform: translate(-128%, 0) skewx(-25deg);
+        }
+        100% {
+            transform: translate(200%, 0) skewx(-25deg);
+        }
+    }
+</code></pre>
+<p>这里动画帧基本就是利用translate水平位移伪元素，然后将动画帧应用到伪元素animation属性：</p>
+<pre><code class="language-css">    animation: flashLights 4s ease-in infinite;
+</code></pre>
+<p>加上animation之后的效果如下图：<br>
+<img src="https://xdevilj136.github.io//post-images/1581234843725.gif" alt="" width="255" loading="lazy"><br>
+实际就是伪元素从图片上平移划过的效果：<br>
+<img src="https://xdevilj136.github.io//post-images/1581235304527.gif" alt="" width="400" loading="lazy"></p>
+<ol start="3">
+<li><strong>动画位置和时间调整</strong><br>
+以上已经实现了动画的主体功能，还要继续调整优化动画的起始和终止位置、动画的循环时间。</li>
+</ol>
+<ul>
+<li>上面的实例图片，实际上已经对伪元素的位置做了调整，主要就是要让伪元素起始位置在图片左边外部，终止位置在图片右边外部，不能覆盖图片；使用left和tansform: translate来实现。</li>
+<li>动画的循环时间调整主要在两方面：动画执行时间缩短（让动画的闪光更快）；一次闪光之后，中间间隔小段时间。</li>
+</ul>
+<pre><code class="language-css">    @keyframes flashLights {
+        0%, 75% {
+            transform: translate(-128%, 0) skewx(-25deg);
+        }
+        100% {
+            transform: translate(200%, 0) skewx(-25deg);
+        }
+    }
+    animation: flashLights 4s ease-in infinite;
+</code></pre>
+<p>动画帧前75%的时间都是在起始位置静止的，后25%执行动画；这样就实现了4s的总时间内，前3秒作为间隔时间，后1s作为动画执行时间，同时实现了两方面的要求。</p>
+<h2 id="对比分析">🤗对比分析</h2>
+<p>动画的平移还可以通过绝对定位的left属性实现，同样只需要改变left值实现闪光的平移。css代码如下：</p>
+<pre><code class="language-css">    .logo_flash:before {
+        background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+        transform: skewx(-25deg);
+        width: 150px;
+        height: 100%;
+        position: absolute;
+        left: -40%;
+        top: 0;
+        content: &quot;&quot;;
+        animation: flashLights 4s ease-in infinite;
+    }
+    @keyframes flashLights {
+        0%,75% {
+            left: -40%;
+            top: 0;
+        }
+        100% {
+            left: 110%;
+            top: 0;
+        }
+    }
+    animation: flashLights 4s ease-in infinite;
+</code></pre>
+<p>同样可以实现闪光效果，看起来没有任何差别；那为什么要使用transform而不使用绝对定位呢？<br>
+这与浏览器的渲染机制有关，浏览器渲染动画每一帧必须经过以下步骤：<br>
+<img src="https://xdevilj136.github.io//post-images/1581308322355.png" alt="" loading="lazy"><br>
+而想要获得流畅的动画效果，目标是每秒生成 60 帧，也就是每帧的预算约为 16 毫秒，但实际上，浏览器有整理工作要做，因此所有步骤需要在 10 毫秒内完成。如果无法符合此预算，帧率将下降产生卡顿。<br>
+因此需要在编码时，尽量减少以上帧渲染步骤的总时间，以减少浏览器开销、提高动画性能。</p>
+<p>由于<strong>改变left属性的实现方案</strong>，改变了元素的几何属性（例如宽度、高度、左侧或顶部位置等），那么浏览器将必须检查所有其他元素，然后“自动重排”页面。任何受影响的部分都需要重新绘制，而且最终绘制的元素需进行合成。所以此方案会经过帧渲染的全部步骤。</p>
+<p><strong>而使用transform的方案</strong>，不影响文档流、不依赖文档流、不会造成重排重绘（满足以上以上条件的css property只有transform和opacity）。更改一个既不要布局也不要绘制的属性，浏览器将跳到只执行合成：<br>
+<img src="https://xdevilj136.github.io//post-images/1581309365268.jpg" alt="" loading="lazy"><br>
+这样动画的开销最小，性能也就最好。</p>
+<p>可以<strong>通过Chrome devtools验证这个结论</strong>：<br>
+下图为使用改变left方案的performace时间统计：<br>
+<img src="https://xdevilj136.github.io//post-images/1581310250680.png" alt="" loading="lazy"><br>
+下图为使用transform方案的performace时间统计：<br>
+<img src="https://xdevilj136.github.io//post-images/1581310518356.png" alt="" loading="lazy"><br>
+<strong>对比发现</strong>，使用transform方案的动画确实比left方案少了，layout和paint步骤，直接跳到composite layers 步骤，渲染时间也相对更短。虽然，在实际显示效果和帧率下相差不大，但如果动画更加复杂或dom元素更多的情况下，两种方案的差别就会显现出来。</p>
+<p>参考链接：<br>
+<a href="https://developers.google.com/web/fundamentals/performance/rail">https://developers.google.com/web/fundamentals/performance/rail</a><br>
+<a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/">https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/</a></p>
 ]]></content>
     </entry>
 </feed>
