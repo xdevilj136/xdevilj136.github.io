@@ -1,22 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://xdevilj136.github.io/</id>
-    <title>Gridea</title>
-    <updated>2020-05-31T07:41:16.379Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://xdevilj136.github.io/"/>
-    <link rel="self" href="https://xdevilj136.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://xdevilj136.github.io/images/avatar.png</logo>
-    <icon>https://xdevilj136.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
-    <entry>
-        <title type="html"><![CDATA[Nodejs快速接入GraphQL]]></title>
-        <id>https://xdevilj136.github.io/post/nodejs-quick-access-graphql/</id>
-        <link href="https://xdevilj136.github.io/post/nodejs-quick-access-graphql/">
-        </link>
-        <updated>2020-05-30T06:10:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-graphql简介">1. GraphQL简介</h2>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nodejs快速接入GraphQL | Gridea</title>
+<link rel="shortcut icon" href="https://xdevilj136.github.io//favicon.ico?v=1590910815187">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xdevilj136.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Nodejs快速接入GraphQL | Gridea - Atom Feed" href="https://xdevilj136.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="1. GraphQL简介
+1.1 GraphQL
+GraphQL 既是一种用于 API 的查询语言，也是一个满足你数据查询的运行时工具。 GraphQL 对 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据..." />
+    <meta name="keywords" content="nodejs,graphql,koa" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://xdevilj136.github.io/">
+  <img class="avatar" src="https://xdevilj136.github.io//images/avatar.png?v=1590910815187" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/xdevilj136/xdevilj136.github.io" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Nodejs快速接入GraphQL
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-30
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+                <a href="https://xdevilj136.github.io/tag/yJkykW2pf/" class="post-tag">
+                  # nodejs
+                </a>
+              
+                <a href="https://xdevilj136.github.io/tag/vFTsOvTN7J/" class="post-tag">
+                  # graphql
+                </a>
+              
+                <a href="https://xdevilj136.github.io/tag/8xC6dOkIV_/" class="post-tag">
+                  # koa
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://xdevilj136.github.io//post-images/nodejs-quick-access-graphql.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="1-graphql简介">1. GraphQL简介</h2>
 <h3 id="11-graphql">1.1 GraphQL</h3>
 <p>GraphQL 既是一种用于 API 的查询语言，也是一个满足你数据查询的运行时工具。 GraphQL 对 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而没有任何冗余，让前后端开发联调效率更高，也让 API 更容易更新和维护。<br>
 使用效果类似：<br>
@@ -325,173 +405,111 @@ export default {
 而未使用graphql的情况下，若接口字段有变动而前端没有及时更新，往往会直接呈现为页面BUG，且难以定位。</p>
 <p>本文demo代码均在：<br>
 https://github.com/xdevilj136/graphql-koa-demo</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[css实现闪光动效]]></title>
-        <id>https://xdevilj136.github.io/post/css-flash-animation/</id>
-        <link href="https://xdevilj136.github.io/post/css-flash-animation/">
-        </link>
-        <updated>2020-02-09T04:39:17.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="demo展示">😎demo展示</h2>
-<p><img src="https://xdevilj136.github.io//post-images/1581236249859.gif" alt="" width="500" loading="lazy"><br>
-以上就是纯css实现的闪光效果，核心就是使用css的animation动画实现，无需编写任何js代码，实现简单且能保证性能、效果流畅。</p>
-<h2 id="代码展示">🤠代码展示</h2>
-<p>直接上代码：</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;/head&gt;
-&lt;style type=&quot;text/css&quot;&gt;
-   .logo_flash {
-       position: relative;
-       margin: 0 auto;
-   }
 
-   .logo_flash {
-       width: 255px;
-       overflow: hidden;
-   }
-
-   .logo_flash:before {
-       background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-       transform: translate(-128%, 0) skewx(-25deg);
-       width: 150px;
-       height: 100%;
-       position: absolute;
-       left: 0px;
-       top: 0;
-       content: &quot;&quot;;
-       animation: flashLights 4s ease-in infinite;
-   }
-
-   @keyframes flashLights {
-       0%, 75% {
-           transform: translate(-128%, 0) skewx(-25deg);
-       }
-
-       100% {
-           transform: translate(200%, 0) skewx(-25deg);
-       }
-   }
-&lt;/style&gt;
-
-&lt;body&gt;
-   &lt;div class=&quot;logo_flash&quot;&gt;
-       &lt;img src=&quot;./img/cat.jpg&quot; width=&quot;255&quot; alt=&quot;&quot;&gt;
-   &lt;/div&gt;
-   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="代码解析">🤓代码解析</h2>
-<p>html部分就是一个div包含一个img元素，闪光动效实际就是<strong>利用css构造一个伪元素在图片上划过</strong>。<br>
-接下来按思路分析<strong>css的实现步骤</strong>：</p>
-<ol>
-<li><strong>实现闪光的伪元素</strong></li>
-</ol>
-<pre><code class="language-css">.logo_flash:before {
-    width: 10px;
-    height: 100%;
-    background: white;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    content: &quot;&quot;;
-    }
-</code></pre>
-<p><img src="https://xdevilj136.github.io//post-images/1581230270243.png" alt="" width="255" loading="lazy"><br>
-这样就实现了悬浮图片上的伪元素，但一个矩形的白色色块显然不能表现闪光。这里增加伪元素宽度、利用css线性渐变函数linear-gradient 做下修饰：</p>
-<pre><code class="language-css">background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-width: 100px;
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://xdevilj136.github.io//post-images/1581234031553.png" alt="" width="255" loading="lazy"></figure>
-<p>然后利用tranform属性的skew函数倾斜转换，就完成了闪光伪元素的实现：</p>
-<pre><code class="language-css">transform: skewx(-25deg);
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://xdevilj136.github.io//post-images/1581234059137.png" alt="" width="255" loading="lazy"></figure>
-<ol>
-<li><strong>实现动画</strong></li>
-</ol>
-<p>已经完成了闪光伪元素的实现，接下来就是要让元素动起来。css动画应用animation属性很容易实现，首先要先定义动画帧:</p>
-<pre><code class="language-css">    @keyframes flashLights {
-        0%{
-            transform: translate(-128%, 0) skewx(-25deg);
-        }
-        100% {
-            transform: translate(200%, 0) skewx(-25deg);
-        }
-    }
-</code></pre>
-<p>这里动画帧基本就是利用translate水平位移伪元素，然后将动画帧应用到伪元素animation属性：</p>
-<pre><code class="language-css">    animation: flashLights 4s ease-in infinite;
-</code></pre>
-<p>加上animation之后的效果如下图：<br>
-<img src="https://xdevilj136.github.io//post-images/1581234843725.gif" alt="" width="255" loading="lazy"><br>
-实际就是伪元素从图片上平移划过的效果：<br>
-<img src="https://xdevilj136.github.io//post-images/1581235304527.gif" alt="" width="400" loading="lazy"></p>
-<ol start="3">
-<li><strong>动画位置和时间调整</strong><br>
-以上已经实现了动画的主体功能，还要继续调整优化动画的起始和终止位置、动画的循环时间。</li>
-</ol>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
 <ul>
-<li>上面的实例图片，实际上已经对伪元素的位置做了调整，主要就是要让伪元素起始位置在图片左边外部，终止位置在图片右边外部，不能覆盖图片；使用left和tansform: translate来实现。</li>
-<li>动画的循环时间调整主要在两方面：动画执行时间缩短（让动画的闪光更快）；一次闪光之后，中间间隔小段时间。</li>
+<li><a href="#1-graphql%E7%AE%80%E4%BB%8B">1. GraphQL简介</a>
+<ul>
+<li><a href="#11-graphql">1.1 GraphQL</a></li>
+<li><a href="#12-apollo-graphql%E7%BB%84%E4%BB%B6">1.2 Apollo Graphql组件</a></li>
 </ul>
-<pre><code class="language-css">    @keyframes flashLights {
-        0%, 75% {
-            transform: translate(-128%, 0) skewx(-25deg);
-        }
-        100% {
-            transform: translate(200%, 0) skewx(-25deg);
-        }
-    }
-    animation: flashLights 4s ease-in infinite;
-</code></pre>
-<p>动画帧前75%的时间都是在起始位置静止的，后25%执行动画；这样就实现了4s的总时间内，前3秒作为间隔时间，后1s作为动画执行时间，同时实现了两方面的要求。</p>
-<h2 id="对比分析">🤗对比分析</h2>
-<p>动画的平移还可以通过绝对定位的left属性实现，同样只需要改变left值实现闪光的平移。css代码如下：</p>
-<pre><code class="language-css">    .logo_flash:before {
-        background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-        transform: skewx(-25deg);
-        width: 150px;
-        height: 100%;
-        position: absolute;
-        left: -40%;
-        top: 0;
-        content: &quot;&quot;;
-        animation: flashLights 4s ease-in infinite;
-    }
-    @keyframes flashLights {
-        0%,75% {
-            left: -40%;
-            top: 0;
-        }
-        100% {
-            left: 110%;
-            top: 0;
-        }
-    }
-    animation: flashLights 4s ease-in infinite;
-</code></pre>
-<p>同样可以实现闪光效果，看起来没有任何差别；那为什么要使用transform而不使用绝对定位呢？<br>
-这与浏览器的渲染机制有关，浏览器渲染动画每一帧必须经过以下步骤：<br>
-<img src="https://xdevilj136.github.io//post-images/1581308322355.png" alt="" loading="lazy"><br>
-而想要获得流畅的动画效果，目标是每秒生成 60 帧，也就是每帧的预算约为 16 毫秒，但实际上，浏览器有整理工作要做，因此所有步骤需要在 10 毫秒内完成。如果无法符合此预算，帧率将下降产生卡顿。<br>
-因此需要在编码时，尽量减少以上帧渲染步骤的总时间，以减少浏览器开销、提高动画性能。</p>
-<p>由于<strong>改变left属性的实现方案</strong>，改变了元素的几何属性（例如宽度、高度、左侧或顶部位置等），那么浏览器将必须检查所有其他元素，然后“自动重排”页面。任何受影响的部分都需要重新绘制，而且最终绘制的元素需进行合成。所以此方案会经过帧渲染的全部步骤。</p>
-<p><strong>而使用transform的方案</strong>，不影响文档流、不依赖文档流、不会造成重排重绘（满足以上以上条件的css property只有transform和opacity）。更改一个既不要布局也不要绘制的属性，浏览器将跳到只执行合成：<br>
-<img src="https://xdevilj136.github.io//post-images/1581309365268.jpg" alt="" loading="lazy"><br>
-这样动画的开销最小，性能也就最好。</p>
-<p>可以<strong>通过Chrome devtools验证这个结论</strong>：<br>
-下图为使用改变left方案的performace时间统计：<br>
-<img src="https://xdevilj136.github.io//post-images/1581310250680.png" alt="" loading="lazy"><br>
-下图为使用transform方案的performace时间统计：<br>
-<img src="https://xdevilj136.github.io//post-images/1581310518356.png" alt="" loading="lazy"><br>
-<strong>对比发现</strong>，使用transform方案的动画确实比left方案少了，layout和paint步骤，直接跳到composite layers 步骤，渲染时间也相对更短。虽然，在实际显示效果和帧率下相差不大，但如果动画更加复杂或dom元素更多的情况下，两种方案的差别就会显现出来。</p>
-<p>参考链接：<br>
-<a href="https://developers.google.com/web/fundamentals/performance/rail">https://developers.google.com/web/fundamentals/performance/rail</a><br>
-<a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/">https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/</a></p>
-]]></content>
-    </entry>
-</feed>
+</li>
+<li><a href="#2-demo%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D">2. demo项目介绍</a>
+<ul>
+<li><a href="#21-%E6%8A%80%E6%9C%AF%E6%A0%88">2.1 技术栈</a></li>
+<li><a href="#22-%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA">2.2 页面展示</a></li>
+<li><a href="#23-%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90">2.3 问题分析</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%8E%A5%E5%85%A5graphql">3. 接入GraphQL</a>
+<ul>
+<li><a href="#31-%E5%AE%9A%E4%B9%89schema">3.1 定义schema</a></li>
+<li><a href="#32-%E5%AE%9E%E7%8E%B0resolver">3.2 实现resolver</a></li>
+<li><a href="#33-%E5%88%9B%E5%BB%BAgraphql-server">3.3 创建graphql server</a></li>
+<li><a href="#34-%E8%B0%83%E7%94%A8graphql%E6%8E%A5%E5%8F%A3">3.4 调用graphql接口</a></li>
+</ul>
+</li>
+<li><a href="#4-%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94">4. 效果对比</a>
+<ul>
+<li><a href="#41-api-%E5%93%8D%E5%BA%94%E5%AD%97%E6%AE%B5">4.1 API 响应字段</a></li>
+<li><a href="#42-api%E8%AF%B7%E6%B1%82%E6%95%B0%E9%87%8F">4.2 API请求数量</a></li>
+<li><a href="#43-%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C">4.3 字段校验</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://xdevilj136.github.io/post/css-flash-animation/">
+              <h3 class="post-title">
+                css实现闪光动效
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://xdevilj136.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
