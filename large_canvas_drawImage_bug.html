@@ -1,0 +1,123 @@
+<!DOCTYPE htm>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <title>Canvas Test</title>
+    <style>
+      body {
+        font: normal 16px/24px Helvetica;
+        color: #333;
+      }
+      h1 {
+        font-size: 32px;
+        line-height: 48px;
+      }
+      #main {
+        max-width: 860px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Large canvas drawImage Bug</h1>
+      <form id="form" class="col" style="width: 100%">
+        <label for="orange-canvas-width">Draw a single orange canvas with a width of
+          <input
+            style="font-weight: bold; width: 60px"
+            id="orange-canvas-width"
+            type="number"
+            value="10000"
+          />
+        </label>
+        <label for="orange-canvas-height">and height of
+          <input
+            style="font-weight: bold; width: 60px"
+            id="orange-canvas-height"
+            type="number"
+            value="10000"
+          />
+        </label>
+
+        <label for="canvas-width">to a content canvas with a width of
+            <input
+              style="font-weight: bold; width: 60px"
+              id="canvas-width"
+              type="number"
+              value="10000"
+            />
+          </label>
+          <label for="canvas-height">and height of
+            <input
+              style="font-weight: bold; width: 60px"
+              id="canvas-height"
+              type="number"
+              value="10000"
+            />
+          </label>
+
+        <strong>px &nbsp;</strong>
+        <button type="submit">Generate</button>
+        <span id="indicator" style="display: none; color: green"
+          >generating...</span
+        >
+      </form>
+
+      <div id="headers">
+        <span style="color: #999">Click generate above to run test.</span>
+      </div>
+
+      <canvas id="contentCanvas" style="width:500px;height:500px;border: 1px green solid;"></canvas>
+    </div>
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      // Main
+
+      const main = () => {
+        let submitting = false;
+        $("form").addEventListener(
+          "submit",
+          (evt) => {
+            evt.preventDefault();
+            if (submitting) {
+              return;
+            }
+            submitting = true;
+
+            $("indicator").style.display = "inline";
+            window.setTimeout(() => {
+              generate();
+              $("indicator").style.display = "none";
+              submitting = false;
+            }, 10);
+          },
+          false
+        );
+      };
+
+      const generate = () => {
+        // create canvas
+        const canvas = $("contentCanvas");
+        canvas.width = $("canvas-width").value || 10000;
+        canvas.height = $("canvas-height").value || 10000;
+
+        // generate an image that we will draw on the canvas
+        const orangeCanvas = document.createElement("canvas");
+        orangeCanvas.width = $("orange-canvas-width").value || 10000;
+        orangeCanvas.height = $("orange-canvas-height").value || 10000;
+        const orangeCtx = orangeCanvas.getContext("2d");
+        orangeCtx.fillStyle = "orange";
+        orangeCtx.fillRect(0, 0, orangeCanvas.width, orangeCanvas.height);
+
+        // draw image on the canvas
+        canvas.getContext("2d").drawImage(orangeCanvas, 0, 0);
+      };
+
+      // Run
+
+      main();
+    </script>
+  </body>
+</html>
